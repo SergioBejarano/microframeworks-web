@@ -1,5 +1,5 @@
 function sendGreeting() {
-    const name = document.getElementById("name").value || "Mundo";
+    const name = document.getElementById("name").value || "World";
 
     fetch(`/app/hello?name=${encodeURIComponent(name)}`)
         .then(response => response.text()) 
