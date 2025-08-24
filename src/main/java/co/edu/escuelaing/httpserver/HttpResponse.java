@@ -16,21 +16,41 @@ public class HttpResponse {
     private String body = "";
     private final Map<String, String> headers = new HashMap<>();
 
+    /*
+     * Initializes default headers.
+     */
     public HttpResponse() {
         headers.put("Content-Type", "text/plain; charset=UTF-8");
         headers.put("Connection", "close");
     }
 
+    /**
+     * Sets the HTTP status code and message.
+     *
+     * @param code    HTTP status code
+     * @param message HTTP status message
+     */
     public void setStatus(int code, String message) {
         this.statusCode = code;
         this.statusMessage = message;
     }
 
+    /**
+     * Sets the body of the response.
+     *
+     * @param body response body
+     */
     public void setBody(String body) {
         this.body = body;
         headers.put("Content-Length", String.valueOf(body.getBytes().length));
     }
 
+    /**
+     * Sets a header in the response.
+     *
+     * @param key   header name
+     * @param value header value
+     */
     public void setHeader(String key, String value) {
         headers.put(key, value);
     }

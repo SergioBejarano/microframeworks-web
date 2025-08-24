@@ -58,14 +58,29 @@ public class HttpRequest {
         return queryParams.get(paramName);
     }
 
+    /**
+     * Returns the request URI.
+     *
+     * @return request URI
+     */
     public URI getRequestUri() {
         return reqUri;
     }
 
+    /**
+     * Returns the HTTP method of the request.
+     *
+     * @return HTTP method
+     */
     public String getMethod() {
         return method;
     }
 
+    /**
+     * Returns the body of the request.
+     *
+     * @return request body
+     */
     public String getBody() {
         return body;
     }

@@ -109,6 +109,13 @@ public class HttpServer {
         }
     }
 
+    /**
+     * Handles GET requests.
+     *
+     * @param out output stream to client
+     * @param uri request URI
+     * @throws IOException on error
+     */
     private static void handleGet(OutputStream out, URI uri) throws IOException {
         String path = uri.getPath();
 
@@ -124,6 +131,14 @@ public class HttpServer {
         }
     }
 
+    /**
+     * Handles POST requests.
+     *
+     * @param out         output stream to client
+     * @param uri         request URI
+     * @param requestBody body of the POST request
+     * @throws IOException on error
+     */
     private static void handlePost(OutputStream out, URI uri, String requestBody) throws IOException {
         String path = uri.getPath();
 
@@ -139,6 +154,13 @@ public class HttpServer {
         }
     }
 
+    /**
+     * Serves a static file.
+     *
+     * @param out  output stream to client
+     * @param path requested file path
+     * @throws IOException on error
+     */
     private static void serveStaticFile(OutputStream out, String path) throws IOException {
         if (path.equals("/")) {
             path = "/index.html";
@@ -163,6 +185,12 @@ public class HttpServer {
         out.flush();
     }
 
+    /**
+     * Sends a 404 Not Found response.
+     *
+     * @param out output stream to client
+     * @throws IOException on error
+     */
     private static void send404(OutputStream out) throws IOException {
         String msg = "<h1>404 Not Found</h1>";
         String header = "HTTP/1.1 404 Not Found\r\n" +
