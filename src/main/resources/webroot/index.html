@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Servidor HTTP en Java</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Arquitecturas Empresariales - AREP</h1>
+    </header>
+
+    <main>
+        <section>
+            <p>Escribe tu nombre y recibirás un saludo desde el servidor (GET):</p>
+            <input type="text" id="name" placeholder="Tu nombre">
+            <button onclick="sendGreeting()">Enviar</button>
+            <div id="response"></div>
+        </section>
+
+        <hr>
+
+        <section>
+            <p>Consulta el valor de π (GET):</p>
+            <button onclick="getPi()">Obtener π</button>
+            <div id="piResponse"></div>
+        </section>
+
+        <hr>
+
+        <section>
+            <p>Envía un mensaje y el servidor lo devolverá (POST):</p>
+            <input type="text" id="echo" placeholder="Tu mensaje">
+            <button onclick="sendEcho()">Enviar</button>
+            <div id="echoResponse"></div>
+        </section>
+    </main>
+
+    <section class="image-strip">
+        <img src="img/logo.jpg" alt="Logo izquierdo">
+        <img src="img/logo2.png" alt="Logo derecho">
+    </section>
+
+    <footer>
+        <p>Servidor web básico en Java - Por Sergio Bejarano</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
